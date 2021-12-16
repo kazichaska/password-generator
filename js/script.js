@@ -29,9 +29,9 @@ function gatherPasswordReq() {
     special = confirm("Would you want any spacial character? like @#$%% etc");
     number = confirm("Would you want any numbers?");
   }
-  console.log(upper,lower,special,number);
+  // console.log(upper,lower,special,number);
 
-  var passwordReqCollection = {
+  passwordReqCollection = {
     lengthChar: gatherInfo,
     specialOn: special,
     lowerOn: lower,
@@ -47,8 +47,31 @@ function gatherPasswordReq() {
 // call function for test
 gatherPasswordReq();
 
-console.log(passwordReqCollection);
-console.log(passwordReqCollection.lengthChar);
+// checking to make sure the vaiables under passwordReqCollection() are accessible from outside
+// console.log(passwordReqCollection.lengthChar);
+// console.log(passwordReqCollection.specialOn);
+// console.log(passwordReqCollection.numberOn);
+
+function generatePassword() {
+  console.log('I am under generatePassword() ' + passwordReqCollection.lengthChar);
+  var pass = passwordReqCollection;
+  console.log('I am under generatePassword() ' + pass.numberOn);
+  var result = [];
+
+  if (!pass.upperOn && !pass.specialOn && !pass.lowerOn && !pass.numberOn) {
+    window.alert("Has to be a valid option!");
+    console.log(result);
+  }
+  else if (pass.upperOn && pass.specialOn && pass.lowerOn && pass.numberOn) {
+    result = character.concat()
+    }
+  }
+  else
+    window.alert("Wrong value");
+
+}
+
+generatePassword();
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
