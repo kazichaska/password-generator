@@ -12,7 +12,6 @@ function gatherPasswordReq() {
   // Ask user input
   gatherInfo = parseInt(prompt("Please enter a number between 8 and 128 which would be the length of your password"));
   // testing to make sure it works
-  
   console.log(gatherInfo);
 
   if (!gatherInfo) {
@@ -55,6 +54,8 @@ function generatePassword() {
 
   if (!pass.upperOn && !pass.specialOn && !pass.lowerOn && !pass.numberOn) {
     window.alert("Has to be a valid option!");
+    // with the following `return` statement if someone picks number of the password length and cancel it would return 
+    // them back to password prompt without undefined error
     return '';
   }
   else if (pass.upperOn && pass.lowerOn && pass.specialOn && pass.numberOn) {
@@ -120,7 +121,9 @@ function generatePassword() {
   else
   window.alert("Wrong value");
 
+  // for loops i < pass.lengthChar would be the vaule requestor asked for password total length
   for (i = 0; i < pass.lengthChar; i++) {
+    // Math random would generate password based off of whatever is on result array and do the calculation from total length of `result.length`
     finalPass += result[Math.floor(Math.random() * result.length)];
     // each time final pass run it would get one character from `result` and adds to the `finalPass`
     console.log(finalPass);
@@ -129,8 +132,6 @@ function generatePassword() {
   // returning finalPass back to function
   return finalPass;
 }
-
-// generatePassword();
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
