@@ -38,6 +38,6 @@ https://kazichaska.github.io/friendly-parakeet/
     ```
 
 ### Screenshots of the code
-![index](./images/index.png)
-![style](./images/script.png)
-![application](./images/application.png)
+![index](./assets/images/index.png)
+![style](./assets/images/script.png)
+![application](./assets/images/application.png)
