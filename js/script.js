@@ -61,14 +61,55 @@ function generatePassword() {
   if (!pass.upperOn && !pass.specialOn && !pass.lowerOn && !pass.numberOn) {
     window.alert("Has to be a valid option!");
   }
-  else if (pass.upperOn && pass.specialOn && pass.lowerOn && pass.numberOn) {
-    result = (upperCase + lowerCase + specialChar + numericChar);
-    console.log(result);
-    }
-    else
-    window.alert("Wrong value");
-  }
 
+  else if (pass.upperOn && pass.lowerOn && pass.specialOn && pass.numberOn) {
+      result.push(...upperCase, ...lowerCase, ...specialChar, ...numericChar);
+      console.log(result);
+    }
+
+  else if (pass.upperOn && pass.lowerOn && pass.specialOn) {
+      result.push(...upperCase, ...lowerCase, ...specialChar);
+      console.log(result);
+    }
+  else if (pass.upperOn && pass.lowerOn && pass.numberOn) {
+    result.push(...upperCase, ...lowerCase, ...numericChar);
+    console.log(result);
+  }
+  else if (pass.lowerOn && pass.numberOn && pass.specialOn) {
+      result.push(...lowerCase, ...numericChar, ...specialChar);
+      console.log(result);
+    }
+  else if (pass.lowerOn && pass.upperOn && pass.specialOn) {
+    result.push(...lowerCase, ...upperCase, ...specialChar);
+    console.log(result);
+  }
+  else if (pass.upperOn && pass.lowerOn) {
+    result.push(...upperCase, ...lowerCase);
+    console.log(result);
+  }
+  else if (pass.upperOn && pass.specialOn) {
+    result.push(...upperCase, ...specialChar);
+    console.log(result);
+  }
+  else if (pass.upperOn && pass.numberOn) {
+    result.push(...upperCase, ...numericChar);
+    console.log(result);
+  }
+  else if (pass.lowerOn && pass.specialOn) {
+    result.push(...lowerCase, ...specialChar);
+    console.log(result);
+  }
+  else if (pass.lowerOn && pass.numberOn) {
+    result.push(...lowerCase, ...numericChar);
+    console.log(result);
+  }
+  else if (pass.specialOn && pass.numberOn) {
+    result.push(...specialChar, ...numericChar);
+    console.log(result);
+  }
+  else
+  window.alert("Wrong value");
+  }
 
 generatePassword();
 
